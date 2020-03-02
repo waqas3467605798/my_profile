@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {db} from '../config/Firebase'
 
-class Student extends Component {
+class Content extends Component {
 
     constructor(props){
         super(props)
@@ -62,4 +62,4 @@ handleStore = () => {
     }
 }
 
-export default Student;
+export default Content;

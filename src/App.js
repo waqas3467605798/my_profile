@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Student from './component/Student'
+import Content from './component/Content'
 import './App.css'
-import Employee from './component/Employee'
+import Header from './component/Header'
 //import Employee from './component/Employee'
 
 
@@ -15,9 +15,8 @@ class App extends Component {
 
 
 <div>
- <Student/>
- <hr/>
-<Employee/>
+
+<Header/>
 </div>
 
     )
