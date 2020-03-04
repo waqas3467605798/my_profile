@@ -5,8 +5,9 @@ import Content from './component/Content'
 import './App.css'
 import Header from './component/Header'
 //import Employee from './component/Employee'
-
-
+import 'materialize-css/dist/css/materialize.min.css'
+import 'materialize-css/dist/js/materialize.min'
+import M from "materialize-css";
 
 class App extends Component {
   
