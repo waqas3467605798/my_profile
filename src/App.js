@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Content from './component/Content'
+import HomeContent from './component/HomeContent'
 import './App.css'
 import Header from './component/Header'
-//import Employee from './component/Employee'
-import 'materialize-css/dist/css/materialize.min.css'
-import 'materialize-css/dist/js/materialize.min'
-import M from "materialize-css";
+import Footer from './component/Footer'
+import Personal from './component/Personal'
+import Education from './component/Education'
+import Experience from './component/Experience'
+import Contact from './component/Contact'
+import Itskills from './component/Itskills'
+
 
 class App extends Component {
   
@@ -16,8 +19,9 @@ class App extends Component {
 
 
 <div>
-
 <Header/>
+<HomeContent/>
+<Footer/>
 </div>
 
     )

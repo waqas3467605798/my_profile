@@ -1,8 +1,8 @@
-.app{
-    color:red;
-}
 
-td{
-    border: 1px dotted green;
-    width: 130px;
+/*Component Name: Header -- CSS on waqas picture*/
+.waqasPic{
+    height: 80px;
+    width: 80px;
+    padding-top: 10px;
+    border-radius: 50px;
 }
