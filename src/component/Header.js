@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import '../App.css'
 import M from "materialize-css";
 import waqasPic from '../images/Picture.jpg'
+import {Link} from 'react-router-dom'
+
+
 
 class Header extends Component {
 constructor(){
@@ -32,22 +35,23 @@ componentDidMount(){
                             </a>
                             
                             <ul className="right hide-on-med-and-down">
-                                <li><a href="sass.html">Personal</a></li>
-                                <li><a href="badges.html">Education</a></li>
-                                <li><a href="collapsible.html">Experience</a></li>
-                                <li><a href="collapsible.html">I.T Skills</a></li>
-                                <li><a href="collapsible.html">Contact me</a></li>
+                                <li><Link to='/Home'>Home</Link></li>
+                                <li><Link to='/Personal'>Personal</Link></li>
+                                <li><Link to='/Education'>Education</Link></li>
+                                <li><Link to='/Experience'>Experience</Link></li>
+                                <li><Link to='/Itskills'>I.T Skills</Link></li>
+                                <li><Link to='/Contact'>Contact me</Link></li>
                             </ul>
                             </div>
                         </nav>
 
                         <ul className="sidenav" id="mobile-links">
-
-                                <li><a href="sass.html">Personal</a></li>
-                                <li><a href="badges.html">Education</a></li>
-                                <li><a href="collapsible.html">Experience</a></li>
-                                <li><a href="collapsible.html">I.T skills</a></li>
-                                <li><a href="collapsible.html">Contact me</a></li>
+                                 <li><Link to='/Home'>Home</Link></li>
+                                <li><Link to='/Personal'>Personal</Link></li>
+                                <li><Link to='/Education'>Education</Link></li>
+                                <li><Link to='/Experience'>Experience</Link></li>
+                                <li><Link to='/Itskills'>I.T Skills</Link></li>
+                                <li><Link to='/Contact'>Contact me</Link></li>
 
                         </ul>
                         
