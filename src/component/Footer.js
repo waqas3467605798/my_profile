@@ -15,7 +15,7 @@ constructor(){
 
     render() {        
         return (
-            <div>
+            
                 <footer class="page-footer">
                 <div class="footer-copyright container">
                     <div class="container">
@@ -25,10 +25,6 @@ constructor(){
                 </div>
                 </footer>
                         
-
-
-                </div>
-
         )
 
 
