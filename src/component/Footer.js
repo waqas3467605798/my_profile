@@ -18,9 +18,9 @@ constructor(){
             
                 <footer class="page-footer">
                 <div class="footer-copyright container">
-                    <div class="container">
-                    My-Personal Profile©2020 Copyright
-                    <span class="grey-text text-lighten-4 right" href="#!">waqas.mba86@gmail.com</span>
+                    <div class="container center">
+                    Prepared by : Waqas Saleem  <br/> waqas.mba86@gmail.com <br/> 0346-7605798
+                 {/*   <span class="grey-text text-lighten-4 right" href="#!">E-mail: waqas.mba86@gmail.com Mobile: 0346-7605798</span>*/}
                     </div>
                 </div>
                 </footer>

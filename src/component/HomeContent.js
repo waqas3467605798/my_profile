@@ -21,9 +21,16 @@ constructor(){
 
 
 <div>
-              <div class="row">
-                    <div class="col s12 m6">
-                    <div class="card blue-grey darken-1">
+<div className='container'>
+    <h4 class="center-align blue-text">CURRICULUM VITAE (C.V)</h4>
+  </div>
+
+
+
+  <div class="row container"> 
+{/* // Grid Coloumn-1/2 */}
+<div class="col s12 m6">
+<div class="card blue-grey darken-1">
                         <div class="card-content white-text">
                         <span class="card-title">Hi, My Name is Waqas Saleem</span>
                         <p>This is my Personal profile page. Can say that this page is my Curriculam Vita The purpose of this page to introduce myself as education wise, Experience and my other skills. Please Click on the above menue bar to visit myself catagorically. <br/>
@@ -40,10 +47,36 @@ constructor(){
                          </p>
                         </div>
                     </div>
-                    </div>
-                </div>
+</div>
 
-                <Link to='/Personal'><button className="waves-effect waves-light btn-large">Go to My personal Info</button></Link>
+
+
+{/* // Grid Coloumn-1/2 */}
+<div class="col s12 m6">
+<div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                        <span class="card-title"><b>My Objective</b></span>
+                        <p>This is my Personal profile page. Can say that this page is my Curriculam Vita The purpose of this page to introduce myself as education wise, Experience and my other skills. Please Click on the above menue bar to visit myself catagorically. <br/>
+                        Following are the Main Points of my C.V (this page)
+                        <ol>
+                            <li>My Personal Information</li>
+                            <li>My Academic Education</li>
+                            <li>My Professional Experience</li>
+                            <li>My Information Technologies (I.T) Skills</li>
+                            <li>My Contact Details</li>
+
+                        </ol>
+                        
+                         </p>
+                        </div>
+                    </div>
+
+ </div>
+
+</div>
+              
+
+                <div className='center'><Link to='/Personal'><button className="waves-effect waves-light btn-large">My personal Information</button></Link> </div>
 
 </div>
         )
