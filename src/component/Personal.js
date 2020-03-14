@@ -19,14 +19,14 @@ constructor(){
 
                     
  <div className='container'>
-    <h4 class="center-align blue-text">PERSONAL INFORMATION</h4>
+    <h4 className="center-align blue-text">PERSONAL INFORMATION</h4>
   </div>
 
 
-<div class="row container"> 
+<div className="row container"> 
 {/* // Grid Coloumn-1/2 */}
-<div class="col s12 m6">
-<ul class="collection container">
+<div className="col s12 m6">
+<ul className="collection container">
       <li className="collection-item "><p> <b>Name</b> <br/>WAQAS SALEEM</p></li>     {/*ok*/}
       <li className="collection-item "><p> <b>Nationality</b> <br/>PAKISTAN</p></li>  {/*ok*/}
       <li className="collection-item "><p> <b>C.N.I.C Number</b> <br/>31303-6611734-5</p></li>  {/*ok*/}
@@ -40,7 +40,7 @@ constructor(){
 
 
 {/* // Grid Coloumn-1/2 */}
-<div class="col s12 m6">
+<div className="col s12 m6">
     <ul className="collection container">
     <li className="collection-item "><p> <b>Father Name</b> <br/>MUHAMMAD SALEEM</p></li>  {/*ok*/}
       <li className="collection-item "><p> <b>Domicile</b> <br/>PUNJAB, FAISALABAD</p></li>  {/*ok*/}

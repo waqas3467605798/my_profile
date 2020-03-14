@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-import 'bootstrap/dist/css/bootstrap.min.css'
 import HomeContent from './component/HomeContent'
 import './App.css'
 import {BrowserRouter , Route} from 'react-router-dom'
