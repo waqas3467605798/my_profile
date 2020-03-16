@@ -22,15 +22,15 @@ constructor(){
 
 <div>
 <div className='container'>
-    <h4 className="center-align blue-text">CURRICULUM VITAE (C.V)</h4>
+    <h4 className="center-align blue-text grey lighten-4">CURRICULUM VITAE (C.V)</h4>
   </div>
 
 
 
   <div className="row container"> 
 {/* // Grid Coloumn-1/2 */}
-<div className="col s12 m6">
-<div className="card blue-grey darken-1" style={{height:'200px'}}>
+                    <div className="col s12 m6">
+                        <div className="card blue-grey lighten-1" style={{height:'200px'}}>
                         <div className="card-content white-text">
                         <span className="card-title"><b>My Objective</b>  </span>
                         <p>Hi, My name is Waqas Saleem. My Goal is to achive the organizational targets. <br/>
@@ -42,9 +42,9 @@ constructor(){
 
 
 
-{/* // Grid Coloumn-1/2 */}
+{/* // Grid Coloumn-2/2 */}
 <div className="col s12 m6">
-<div className="card blue-grey darken-1" style={{height:'200px'}}>
+<div className="card blue-grey lighten-1" style={{height:'200px'}}>
                         <div className="card-content white-text">
                         <span className="card-title"><b>Area of Interest</b></span>
                         <p>Finance & Accounts is my area of interest. I have more than 12-Years experience in this field.  <br/>
@@ -55,10 +55,35 @@ constructor(){
 
  </div>
 
-</div>
-              
+ 
 
-                <div className='center'><Link to='/Personal'><button className="waves-effect waves-light btn-large">My personal Information</button></Link> </div>
+</div>
+
+<div className='container'>
+ <h5 className="center-align blue-text grey lighten-4">Components of My Curriculum Vitae (C.V)</h5>
+
+<div className="row container">
+
+
+{/* // Grid Coloumn-1/2 */}
+<div className="col s12 m6">
+<div className='center'><Link to='/Personal'><button className="waves-effect waves-light btn-large btn">Personal Info</button></Link> </div><br/>
+<div className='center'><Link to='/Experience'><button className="waves-effect waves-light btn-large btn">Experience</button></Link> </div>
+</div>
+
+
+
+{/* // Grid Coloumn-2/2 */}
+<div className="col s12 m6">
+<div className='center'><Link to='/Education'><button className="waves-effect waves-light btn-large btn">Education</button></Link> </div><br/>
+<div className='center'><Link to='/Itskills'><button className="waves-effect waves-light btn-large btn">I.T Skilss</button></Link> </div>
+</div>
+
+
+</div>
+</div>
+
+                
 
 </div>
         )
