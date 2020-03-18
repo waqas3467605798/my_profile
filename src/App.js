@@ -9,7 +9,7 @@ import Education from './component/Education'
 import Experience from './component/Experience'
 import Contact from './component/Contact'
 import Itskills from './component/Itskills'
-
+import Login from './component/Login'
 
 class App extends Component {
   
@@ -27,7 +27,7 @@ class App extends Component {
 <Route path='/Experience' component={Experience}/>
 <Route path='/Itskills' component={Itskills}/>
 <Route path='/Contact' component={Contact}/>
-
+<Route path='/Login' component={Login}/>
 <Footer/>
 </div>
 </BrowserRouter>

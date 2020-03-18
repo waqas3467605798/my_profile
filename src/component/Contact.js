@@ -44,7 +44,7 @@ constructor(){
                         <div className="card blue-grey lighten-4">
                         <div className="card-content black-text">
                         <span className="card-title"><b>Office</b>  </span>
-                        <p> Ph: 041-8757081-90 Ext. 108 <br/>Address: Head Office, Kashmir Road, Nishatabad, Faisalabad, Pakistan</p>
+                        <p> Ph: 041-8757081-90 Ext. 108 <br/>Address: Head Office, Kashmir Road, Nishatabad, Faisalabad, Pakistan.</p>
                         </div>
                     </div>
                     </div>

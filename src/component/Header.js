@@ -40,7 +40,8 @@ componentDidMount(){
                                 <li><Link to='/Education'>Education</Link></li>
                                 <li><Link to='/Experience'>Experience</Link></li>
                                 <li><Link to='/Itskills'>I.T Skills</Link></li>
-                                <li><Link to='/Contact'>Contact me</Link></li>
+                                <li><Link to='/Contact'>Contact</Link></li>
+                                <li><Link to='/Login'>Login</Link></li>
                             </ul>
                             </div>
                         </nav>
@@ -52,7 +53,7 @@ componentDidMount(){
                                 <li><Link to='/Experience'>Experience</Link></li>
                                 <li><Link to='/Itskills'>I.T Skills</Link></li>
                                 <li><Link to='/Contact'>Contact me</Link></li>
-
+                                <li><Link to='/Login'>Login</Link></li>
                         </ul>
                         
 

@@ -68,7 +68,8 @@ constructor(){
 {/* // Grid Coloumn-1/2 */}
 <div className="col s12 m6">
 <div className='center'><Link to='/Personal'><button className="waves-effect waves-light btn-large btn">Personal Info</button></Link> </div><br/>
-<div className='center'><Link to='/Experience'><button className="waves-effect waves-light btn-large btn">Experience</button></Link> </div>
+<div className='center'><Link to='/Experience'><button className="waves-effect waves-light btn-large btn">Experience</button></Link> </div><br/>
+<div className='center'><Link to='/Contact'><button className="waves-effect waves-light btn-large btn">Contact</button></Link> </div>
 </div>
 
 
@@ -76,11 +77,23 @@ constructor(){
 {/* // Grid Coloumn-2/2 */}
 <div className="col s12 m6">
 <div className='center'><Link to='/Education'><button className="waves-effect waves-light btn-large btn">Education</button></Link> </div><br/>
-<div className='center'><Link to='/Itskills'><button className="waves-effect waves-light btn-large btn">I.T Skilss</button></Link> </div>
+<div className='center'><Link to='/Itskills'><button className="waves-effect waves-light btn-large btn">I.T Skilss</button></Link> </div><br/>
+<div className='center'><Link to='/Login'><button className="waves-effect waves-light btn-large btn">Login</button></Link> </div>
 </div>
 
 
 </div>
+
+    <div>
+    <div className="card blue-grey lighten-4">
+     <div className="card-content black-text">
+     <span className="card-title"><b>About Me</b>  </span>
+     <p> My name is waqas saleem. I was born in Faisalabad. My father was a Govt. School teacher. He passed away in 2010. </p>
+     </div>
+     </div>
+     </div>
+
+
 </div>
 
                 
