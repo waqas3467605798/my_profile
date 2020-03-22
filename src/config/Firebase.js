@@ -1,9 +1,9 @@
-import * as firebase from "firebase/app";
+import firebase from 'firebase';
 
 // Add the Firebase products that you want to use
-import "firebase/auth";
-import "firebase/firestore";
-import "firebase/storage";
+// import "firebase/auth";
+// import "firebase/firestore";
+// import "firebase/storage";
 
 
 var firebaseConfig = {
@@ -17,11 +17,11 @@ var firebaseConfig = {
   measurementId: "G-DR2KG8P9N9"
 };
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  const fire = firebase.initializeApp(firebaseConfig);
   //firebase.analytics();
 
-var db = firebase.firestore();
+// var db = firebase.firestore();
 
-export {db};
+// export {db};
 
-export default firebase;
+export default fire;

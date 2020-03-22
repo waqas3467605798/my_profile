@@ -16,3 +16,10 @@
     width:200px;
 }
 
+.loginChange{
+    visibility: hidden;
+}
+
+.display{
+    display: none;
+}
