@@ -29,7 +29,7 @@ componentDidMount(){
 
                       <nav className="nav-wrapper" style={{height:'85px'}}>
                             <div className="container">
-                            <img src={waqasPic} className='waqasPic  brand-logo' /> 
+                            <img src={waqasPic} className='waqasPic  brand-logo' alt='pic here'/> 
                             <a href="#" className="sidenav-trigger" data-target="mobile-links">
                             <i className="material-incons">menu</i>
                             </a>

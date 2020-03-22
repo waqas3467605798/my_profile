@@ -31,7 +31,7 @@ fire.auth().onAuthStateChanged( (user)=>{
     render() {        
         return (
 <div className='container'>
-    {this.state.user ? (<DisplayLoginPage/>) : <LoginRegisterFroms/>}
+    {this.state.user ? (<DisplayLoginPage/>) : <LoginRegisterForms/>}
 </div>
 
         )
@@ -47,7 +47,7 @@ export default Login;
 
 
 
-class LoginRegisterFroms extends Component{
+class LoginRegisterForms extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -102,10 +102,14 @@ class Register extends Component{
 signup = ()=>{
 const email = document.querySelector('#email2').value;
 const password = document.querySelector('#password2').value;
+const fname = document.querySelector('#firstName').value;
+const sname = document.querySelector('#secondName').value;
+
+
 
 fire.auth().createUserWithEmailAndPassword(email, password)
 .then( (u)=>{
-    console.log("successfully login");
+    alert(fname + " " + sname + " You have successfully Registered and login");
 } )
 .catch( (err)=>{
     console.log('error')
@@ -138,7 +142,7 @@ fire.auth().createUserWithEmailAndPassword(email, password)
               </div>
 
               <div className="input-field">
-             <input placeholder="Set Password" id="password2" type="text" className="validate" />
+             <input placeholder="Set Password" id="password2" type="password" className="validate" />
              {/* <label forhtml="first_name">First Name</label> */}
               </div>
 
@@ -170,7 +174,7 @@ class Loginform extends Component{
     
     fire.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
-        console.log("successfully login");
+        alert("successfully login");
     } )
     .catch( (err)=>{
         console.log('error')
@@ -193,7 +197,7 @@ class Loginform extends Component{
               </div>
 
               <div className="input-field">
-             <input placeholder="Password" id="password" type="text" className="validate" />
+             <input placeholder="Password" id="password" type="password" className="validate" />
              {/* <label forhtml="first_name">First Name</label> */}
               </div>
 
@@ -217,8 +221,15 @@ fire.auth().signOut();
     render(){
         return (
             <div>
-                Successfully loged in
-                <button onClick={this.logout}>Logout</button>
+                <h2>Welcome...</h2>
+                <h4>Are you like this profile and want to make your own profile like this....</h4>
+                <h4>Please Contact:</h4>
+                <p>+923467605798</p>
+                <p>+923167558180</p>
+                <p>waqas.mba86@gmail.com</p>
+                <p>waqas_mba86@yahoo.com</p>
+                
+                <button className="waves-effect btn-large" onClick={this.logout}>Logout</button>
             </div>
         )
     }

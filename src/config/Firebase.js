@@ -6,15 +6,15 @@ import firebase from 'firebase';
 // import "firebase/storage";
 
 
-var firebaseConfig = {
-  apiKey: "AIzaSyDLwOzMsUPopHWc4MvReEmrGyDS-hk50Eo",
-  authDomain: "dbpractic.firebaseapp.com",
-  databaseURL: "https://dbpractic.firebaseio.com",
-  projectId: "dbpractic",
-  storageBucket: "dbpractic.appspot.com",
-  messagingSenderId: "646137494194",
-  appId: "1:646137494194:web:7965273c83a24e506227ab",
-  measurementId: "G-DR2KG8P9N9"
+const firebaseConfig = {
+  apiKey: "AIzaSyBlpkuddqlHUKN_LysE4jth1JfnAqeQ2EY",
+  authDomain: "my-profile-20ec6.firebaseapp.com",
+  databaseURL: "https://my-profile-20ec6.firebaseio.com",
+  projectId: "my-profile-20ec6",
+  storageBucket: "my-profile-20ec6.appspot.com",
+  messagingSenderId: "844226980512",
+  appId: "1:844226980512:web:6d7c7b7f3a65ae601ff7c5",
+  measurementId: "G-B16HLBS58L"
 };
   // Initialize Firebase
   const fire = firebase.initializeApp(firebaseConfig);
