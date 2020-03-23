@@ -33,7 +33,7 @@ constructor(){
                         <div className="card blue-grey lighten-1" style={{height:'200px'}}>
                         <div className="card-content white-text">
                         <span className="card-title"><b>My Objective</b>  </span>
-                        <p>Hi, My name is Waqas Saleem. My Goal is to achive the organizational targets. <br/>
+                        <p>To make an immediate contribution to the organization to which I will be engaged; using my practical experience, by applying my knowledge, by using my high caliber and intellectual skills. <br/>
                     
                         </p>
                         </div>
@@ -47,7 +47,7 @@ constructor(){
 <div className="card blue-grey lighten-1" style={{height:'200px'}}>
                         <div className="card-content white-text">
                         <span className="card-title"><b>Area of Interest</b></span>
-                        <p>Finance & Accounts is my area of interest. I have more than 12-Years experience in this field.  <br/>
+                        <p>Finance and Accounts is my area of interest. I have more than 12-Years experience in this field.  <br/>
                         
                          </p>
                         </div>

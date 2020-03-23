@@ -26,8 +26,6 @@ fire.auth().onAuthStateChanged( (user)=>{
 })
 }
 
-
-
     render() {        
         return (
 <div className='container'>
@@ -112,7 +110,7 @@ fire.auth().createUserWithEmailAndPassword(email, password)
     alert(fname + " " + sname + " You have successfully Registered and login");
 } )
 .catch( (err)=>{
-    console.log('error')
+    alert('error' + 'this email is already registered, please click on login')
 } )
 
 }
@@ -174,7 +172,8 @@ class Loginform extends Component{
     
     fire.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
-        alert("successfully login");
+        alert("successfully login ");
+        console.log(u)
     } )
     .catch( (err)=>{
         console.log('error')
