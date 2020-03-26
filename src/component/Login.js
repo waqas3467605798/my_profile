@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import '../App.css'
 import fire from '../config/Firebase'
+import {MyLoginConsumer} from '../context/LoginContext'
+import {MyLoginProvider} from '../context/LoginContext'
+
 
 class Login extends Component {
 constructor(props){
@@ -12,14 +15,15 @@ constructor(props){
 
 
 componentDidMount(){
-this.authListener();    
+this.authListener();
+
 }
 
 
 authListener = ()=>{
 fire.auth().onAuthStateChanged( (user)=>{
     if(user){
-        this.setState({user})
+        this.setState({user, isLogin:true})
     } else {
         this.setState({user:null})
     }
@@ -30,6 +34,8 @@ fire.auth().onAuthStateChanged( (user)=>{
         return (
 <div className='container'>
     {this.state.user ? (<DisplayLoginPage/>) : <LoginRegisterForms/>}
+
+            
 </div>
 
         )
@@ -95,23 +101,34 @@ class LoginRegisterForms extends Component{
 
 // Register Form Component
 class Register extends Component{
+constructor(props){
+    super(props)
+    this.state = {
+    
+    }
+}
+
 
 
 signup = ()=>{
 const email = document.querySelector('#email2').value;
 const password = document.querySelector('#password2').value;
-const fname = document.querySelector('#firstName').value;
-const sname = document.querySelector('#secondName').value;
+const conpassword = document.querySelector('#conpassword').value;
 
-
+if(password === conpassword){
 
 fire.auth().createUserWithEmailAndPassword(email, password)
 .then( (u)=>{
-    alert(fname + " " + sname + " You have successfully Registered and login");
+    console.log(u);
+    
 } )
 .catch( (err)=>{
     alert('error' + 'this email is already registered, please click on login')
 } )
+
+} else {
+        alert("Your entered password is not match")
+        }
 
 }
 
@@ -124,15 +141,9 @@ fire.auth().createUserWithEmailAndPassword(email, password)
             <div className="row">
             <div className="col s12">
              
-             <div className="input-field">
-             <input placeholder="First Name" id="firstName" type="text" className="validate" />
-             {/* <label forhtml="first_name">First Name</label> */}
-              </div>
+             
 
-              <div className="input-field">
-             <input placeholder="Second Name" id="secondName" type="text" className="validate" />
-             {/* <label forhtml="first_name">First Name</label> */}
-              </div>
+              
 
               <div className="input-field">
              <input placeholder="Email" id="email2" type="text" className="validate" />
@@ -141,6 +152,11 @@ fire.auth().createUserWithEmailAndPassword(email, password)
 
               <div className="input-field">
              <input placeholder="Set Password" id="password2" type="password" className="validate" />
+             {/* <label forhtml="first_name">First Name</label> */}
+              </div>
+
+              <div className="input-field">
+             <input placeholder="Confirm Password" id="conpassword" type="password" className="validate" />
              {/* <label forhtml="first_name">First Name</label> */}
               </div>
 
@@ -172,8 +188,7 @@ class Loginform extends Component{
     
     fire.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
-        alert("successfully login ");
-        console.log(u)
+        console.log(u.user.email);
     } )
     .catch( (err)=>{
         console.log('error')

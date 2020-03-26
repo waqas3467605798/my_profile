@@ -16,10 +16,15 @@
     width:200px;
 }
 
-.loginChange{
-    visibility: hidden;
-}
 
+
+/* this css class used in login page */
 .display{
     display: none;
+}
+
+
+/* this css class is used in experience page at key responsibilities */
+.experience{
+    padding-left: 10px;
 }

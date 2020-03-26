@@ -30,8 +30,8 @@ constructor(){
   <div className="row container"> 
 {/* // Grid Coloumn-1/2 */}
                     <div className="col s12 m6">
-                        <div className="card blue-grey lighten-1" style={{height:'200px'}}>
-                        <div className="card-content white-text">
+                        <div className="card blue-grey lighten-4" style={{height:'200px'}}>
+                        <div className="card-content black-text" style={{textAlign:"justify"}}>
                         <span className="card-title"><b>My Objective</b>  </span>
                         <p>To make an immediate contribution to the organization to which I will be engaged; using my practical experience, by applying my knowledge, by using my high caliber and intellectual skills. <br/>
                     
@@ -44,10 +44,10 @@ constructor(){
 
 {/* // Grid Coloumn-2/2 */}
 <div className="col s12 m6">
-<div className="card blue-grey lighten-1" style={{height:'200px'}}>
-                        <div className="card-content white-text">
+<div className="card blue-grey lighten-4" style={{height:'200px'}}>
+                        <div className="card-content black-text" style={{textAlign:"justify"}}>
                         <span className="card-title"><b>Area of Interest</b></span>
-                        <p>Finance and Accounts is my area of interest. I have more than 12-Years experience in this field.  <br/>
+                        <p>Finance and Accounts is my area of interest. I have more than 12-Years experience in Finance/Accounts Department. During my tenor, i faced many challenges in this field and found bettor solutions to meet the challenge.  <br/>
                         
                          </p>
                         </div>
@@ -59,6 +59,23 @@ constructor(){
 
 </div>
 
+
+
+     <div className='container'>
+    <div className="card blue-grey lighten-4">
+     <div className="card-content black-text">
+     <span className="card-title"><b>About Me</b>  </span>
+     <p style={{textAlign:'justify'}}> My name is waqas saleem. I was born in Faisalabad. My father was a Govt. School teacher. He retired and passed away in 2010. I belong to a middle level family. As a student, I was not a very good, but a normal student. I studied till 16th Class but passed all the exams with a normal marks (Not have excellent marks). But i belief, a normal student can be a good teacher, but it is not neccessory that a good student can be a good teacher </p>
+     </div>
+     </div>
+     </div>
+
+
+
+
+
+
+{/* Component of Curriculum Vitae */}
 <div className='container'>
  <h5 className="center-align blue-text grey lighten-4">Components of My Curriculum Vitae (C.V)</h5>
 
@@ -84,14 +101,7 @@ constructor(){
 
 </div>
 
-    <div>
-    <div className="card blue-grey lighten-4">
-     <div className="card-content black-text">
-     <span className="card-title"><b>About Me</b>  </span>
-     <p> My name is waqas saleem. I was born in Faisalabad. My father was a Govt. School teacher. He passed away in 2010. </p>
-     </div>
-     </div>
-     </div>
+   
 
 
 </div>

@@ -10,12 +10,15 @@ import Experience from './component/Experience'
 import Contact from './component/Contact'
 import Itskills from './component/Itskills'
 import Login from './component/Login'
+import LoginContextStore from './context/LoginContext'
 
 class App extends Component {
   
   render() {    
     return (
 
+
+      <LoginContextStore>
 <BrowserRouter>
 <div>
 <Header/>
@@ -31,6 +34,7 @@ class App extends Component {
 <Footer/>
 </div>
 </BrowserRouter>
+      </LoginContextStore>
     )
   }
 }

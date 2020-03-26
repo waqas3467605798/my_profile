@@ -3,6 +3,7 @@ import '../App.css'
 import M from "materialize-css";
 import waqasPic from '../images/Picture.jpg'
 import {Link} from 'react-router-dom'
+import {MyLoginConsumer , MyLoginProvider} from '../context/LoginContext'
 
 
 
@@ -27,6 +28,7 @@ componentDidMount(){
             <div>
 
 
+
                       <nav className="nav-wrapper" style={{height:'85px'}}>
                             <div className="container">
                             <img src={waqasPic} className='waqasPic  brand-logo' alt='pic here'/> 
@@ -41,10 +43,13 @@ componentDidMount(){
                                 <li><Link to='/Experience'>Experience</Link></li>
                                 <li><Link to='/Itskills'>I.T Skills</Link></li>
                                 <li><Link to='/Contact'>Contact</Link></li>
-                                <li><Link to='/Login'>Login</Link></li>
+                                <li><Link to='/Login'> Login</Link></li>
+                                 
                             </ul>
                             </div>
                         </nav>
+
+
 
                         <ul className="sidenav" id="mobile-links">
                                  <li><Link to='/Home'>Home</Link></li>
@@ -53,7 +58,8 @@ componentDidMount(){
                                 <li><Link to='/Experience'>Experience</Link></li>
                                 <li><Link to='/Itskills'>I.T Skills</Link></li>
                                 <li><Link to='/Contact'>Contact me</Link></li>
-                                <li><Link to='/Login'>Login</Link></li>
+                                <li><Link to='/Login'> Login</Link></li>
+                            
                         </ul>
                         
 

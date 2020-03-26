@@ -1,32 +1,36 @@
-import React, {Component} from 'react'
 import '../App.css'
-import M from "materialize-css";
-import waqasPic from '../images/Picture.jpg'
-import {Link} from 'react-router-dom'
+import React, { Component, createContext } from 'react';
 
+const myContext = createContext();
 
+export const MyLoginProvider = myContext.Provider;
+export const MyLoginConsumer = myContext.Consumer;
 
-class Header extends Component {
+class LoginContextStore extends Component {
 constructor(){
     super()
     this.state = {
-        
+        name: 'waqas',
+        loginStatus: false
     }
 }
 
 
-
+l
 
     render() {        
         return (
             <div>
+            <MyLoginProvider value={{...this.state}}>
+                {this.props.children}
+            </MyLoginProvider>
 
+            
             </div>
-
         )
 
 
     }
 }
 
-export default Header;
+export default LoginContextStore;
