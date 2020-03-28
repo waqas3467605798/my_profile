@@ -10,8 +10,7 @@ class LoginContextStore extends Component {
 constructor(){
     super()
     this.state = {
-        name: 'waqas',
-        loginStatus: false
+        
     }
 }
 

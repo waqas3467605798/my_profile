@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import '../App.css'
-import fire from '../config/Firebase'
+import firebase from '../config/Firebase'
+import {db} from '../config/Firebase'
 import {MyLoginConsumer} from '../context/LoginContext'
 import {MyLoginProvider} from '../context/LoginContext'
+
 
 
 class Login extends Component {
@@ -21,7 +23,7 @@ this.authListener();
 
 
 authListener = ()=>{
-fire.auth().onAuthStateChanged( (user)=>{
+firebase.auth().onAuthStateChanged( (user)=>{
     if(user){
         this.setState({user, isLogin:true})
     } else {
@@ -75,7 +77,7 @@ class LoginRegisterForms extends Component{
         return(
             <div>
             <p>If you have already Registered, Plz Login. If you not Registered already, plz Click on Register first.</p>
-        <button className="waves-effect btn-large" onClick={this.displayLoginForm}>Login </button>
+        <button className="waves-effect btn-large" onClick={this.displayLoginForm}>Login </button> <span style={{color:'white'}}>...</span>
         <button className="waves-effect btn-large" onClick={this.displayRegisterForm}>Registeration</button>
     
                 {/* LoginForm Div*/}
@@ -111,16 +113,37 @@ constructor(props){
 
 
 signup = ()=>{
+const name = document.querySelector('#name').value;
 const email = document.querySelector('#email2').value;
 const password = document.querySelector('#password2').value;
 const conpassword = document.querySelector('#conpassword').value;
 
 if(password === conpassword){
 
-fire.auth().createUserWithEmailAndPassword(email, password)
+firebase.auth().createUserWithEmailAndPassword(email, password)
 .then( (u)=>{
     console.log(u);
     
+
+
+
+    db.collection("users").add({
+        userame: name,
+        useremail: email,
+        userpassword: password,
+        
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });     
+
+
+
+
+
 } )
 .catch( (err)=>{
     alert('error' + 'this email is already registered, please click on login')
@@ -142,6 +165,10 @@ fire.auth().createUserWithEmailAndPassword(email, password)
             <div className="col s12">
              
              
+            <div className="input-field">
+             <input placeholder="Your Name" id="name" type="text" className="validate" />
+             {/* <label forhtml="first_name">First Name</label> */}
+              </div>
 
               
 
@@ -186,7 +213,7 @@ class Loginform extends Component{
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     
-    fire.auth().signInWithEmailAndPassword(email, password)
+    firebase.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
         console.log(u.user.email);
     } )
@@ -228,22 +255,34 @@ class Loginform extends Component{
 
 class DisplayLoginPage extends Component{
 
+    constructor(props){
+        super(props)
+        this.state = {
+                  
+        }
+      }
+
+     
+
+// handleStore = () => {
+ 
+//   }
+
 
 logout = ()=>{
-fire.auth().signOut();
+firebase.auth().signOut();
 }
+
+
+
     render(){
         return (
             <div>
-                <h2>Welcome...</h2>
-                <h4>Are you like this profile and want to make your own profile like this....</h4>
-                <h4>Please Contact:</h4>
-                <p>+923467605798</p>
-                <p>+923167558180</p>
-                <p>waqas.mba86@gmail.com</p>
-                <p>waqas_mba86@yahoo.com</p>
+                <h4>Welcome...</h4>
                 
-                <button className="waves-effect btn-large" onClick={this.logout}>Logout</button>
+                              
+
+                <button className="waves-effect btn-large red" onClick={this.logout}>Logout</button>
             </div>
         )
     }

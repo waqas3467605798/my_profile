@@ -1,9 +1,9 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
 
 // Add the Firebase products that you want to use
-// import "firebase/auth";
-// import "firebase/firestore";
-// import "firebase/storage";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
 
 
 const firebaseConfig = {
@@ -17,11 +17,18 @@ const firebaseConfig = {
   measurementId: "G-B16HLBS58L"
 };
   // Initialize Firebase
-  const fire = firebase.initializeApp(firebaseConfig);
-  //firebase.analytics();
+  // const fire = 
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
 
-// var db = firebase.firestore();
+  // firebase.analytics();
+// Get a reference to the storage service, which is used to create references in your storage bucket
+var storage = firebase.storage();
+// const db = firebase.firestore();
 
-// export {db};
+// Create a storage reference from our storage service
+var storageRef = storage.ref();
 
-export default fire;
+export {db, storage, storageRef}
+
+export default firebase;
