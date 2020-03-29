@@ -29,7 +29,7 @@ constructor(){
          
                              <div className="container"> 
                              <ul className="collection">
-                             <li className="collection-item grey lighten-3"><b className='green-text'>COMPUTER SKILLS</b><br/>Have more than 10 years Experience of wokring on the followings;<br/> 1- <b>Microsoft Excel</b> <br/>2- <b>Microsoft Word</b> <br/>3- <b>Power Point</b> <br/> 4- <b>Internet Browsing</b><br/> 5- <b>E-mails </b> </li>
+                             <li className="collection-item grey lighten-3"><b className='green-text'>COMPUTER SKILLS</b><br/>Have more than 10 years Experience of wokring on the followings;<br/> 1- <b>Microsoft Excel</b> <br/>2- <b>Microsoft Word</b> <br/>3- <b>Power Point</b> <br/> 4- <b>Oracle</b><br/> 5- <b>Internet Browsing</b><br/>6-<b> E-mails </b> </li>
                              </ul>
                              </div>
          

@@ -120,6 +120,9 @@ const conpassword = document.querySelector('#conpassword').value;
 
 if(password === conpassword){
 
+    localStorage.setItem("currentUser",name);
+
+ 
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then( (u)=>{
     console.log(u);
@@ -141,16 +144,15 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
     });     
 
 
-
-
-
 } )
 .catch( (err)=>{
     alert('error' + 'this email is already registered, please click on login')
 } )
 
+
+
 } else {
-        alert("Your entered password is not match")
+        alert("Your entered password is not match with confirm password")
         }
 
 }
@@ -213,9 +215,30 @@ class Loginform extends Component{
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
     
+
+
+ 
+    db.collection("users").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+
+
+            if(doc.data().useremail === email){
+                console.log(doc.data().userame)
+                const current_user = doc.data().userame;
+                localStorage.setItem("currentUser",current_user);
+            }
+            
+        });
+    });
+
+
+
+
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
-        console.log(u.user.email);
+
+
+
     } )
     .catch( (err)=>{
         console.log('error')
@@ -258,16 +281,11 @@ class DisplayLoginPage extends Component{
     constructor(props){
         super(props)
         this.state = {
-                  
+        current_us: localStorage.getItem("currentUser")
         }
       }
 
      
-
-// handleStore = () => {
- 
-//   }
-
 
 logout = ()=>{
 firebase.auth().signOut();
@@ -278,7 +296,7 @@ firebase.auth().signOut();
     render(){
         return (
             <div>
-                <h4>Welcome...</h4>
+                <h4>Welcome...{this.state.current_us}</h4>
                 
                               
 

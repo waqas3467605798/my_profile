@@ -62,7 +62,7 @@ class Mba extends Component {
     render(){
         return(
             <div>
-                <p style={{color:'green'}} className='grey lighten-3'>MBA-Banking and Finance</p>
+                <p  style={{fontSize:'20px'}}className='grey lighten-3 red-text'>MBA-Banking and Finance</p>
                <table className='table grey lighten-2'>
                    <tr>
                        <td>Total Marks</td> <td>2000</td>
@@ -75,7 +75,7 @@ class Mba extends Component {
                    </tr>
                </table>
 
-               <p style={{color:'green'}} className='grey lighten-2'>Main Subjects</p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Main Subjects-MBA</p>
 
                <table className='table grey lighten-2'>
                <tr>
@@ -105,7 +105,7 @@ class Bcom extends Component {
     render(){
         return(
             <div>
-               <p style={{color:'green'}} className='grey lighten-2'>B.com </p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>B.com </p>
                <table className='table grey lighten-3'>
                    <tr>
                        <td>Total Marks</td> <td>1500</td>
@@ -118,7 +118,7 @@ class Bcom extends Component {
                    </tr>
                </table>
 
-               <p style={{color:'green'}} className='grey lighten-2'>Main Subjects</p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Main Subjects-B.com</p>
 
                <table className='table grey lighten-3'>
                <tr>
@@ -147,7 +147,7 @@ class Fa extends Component {
     render(){
         return(
             <div>
-                 <p style={{color:'green'}} className='grey lighten-2'>Intermediate </p>
+                 <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Intermediate </p>
                <table className='table grey lighten-3'>
                    <tr>
                        <td>Total Marks</td> <td>1100</td>
@@ -160,7 +160,7 @@ class Fa extends Component {
                    </tr>
                </table>
 
-               <p style={{color:'green'}} className='grey lighten-2'>Main Subjects</p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Main Subjects - Intermediate</p>
 
                <table className='table grey lighten-3'>
                <tr>
@@ -186,7 +186,7 @@ class Matric extends Component {
     render(){
         return(
             <div>
-               <p style={{color:'green'}} className='grey lighten-2'>Matriculation </p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Matriculation </p>
                <table className='table grey lighten-3'>
                    <tr>
                        <td>Total Marks</td> <td>850</td>
@@ -199,7 +199,7 @@ class Matric extends Component {
                    </tr>
                </table>
 
-               <p style={{color:'green'}} className='grey lighten-2'>Main Subjects</p>
+               <p style={{fontSize:'20px'}} className='grey lighten-2 red-text'>Main Subjects - Matric</p>
 
                <table className='table grey lighten-3'>
                <tr>
