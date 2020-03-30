@@ -3,7 +3,7 @@ import '../App.css'
 import M from "materialize-css";
 import waqasPic from '../images/Picture.jpg'
 import {Link} from 'react-router-dom'
-import {MyLoginConsumer , MyLoginProvider} from '../context/LoginContext'
+// import {MyLoginConsumer , MyLoginProvider} from '../context/LoginContext'
 
 
 
@@ -32,7 +32,7 @@ componentDidMount(){
                       <nav className="nav-wrapper" style={{height:'85px'}}>
                             <div className="container">
                             <img src={waqasPic} className='waqasPic  brand-logo' alt='pic here'/> 
-                            <a href="#" className="sidenav-trigger" data-target="mobile-links">
+                            <a  href="#" className="sidenav-trigger" data-target="mobile-links">
                             <i className="material-incons">menu</i>
                             </a>
                             

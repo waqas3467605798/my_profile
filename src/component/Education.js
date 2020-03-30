@@ -235,12 +235,3 @@ export default Education;
 
 
 
-
-
-{/* // Grid Coloumn-1/2 
-                    <div className="col s4"> 
-                    <Link to='/mba'>Marks Detail- MBA</Link> <br/> <br/>
-                    <Link to='/bcom'>Marks Detail- B.com</Link> <br/>  <br/>
-                    <Link to='/fa'>Marks Detail- Intermediate</Link> <br/> <br/>
-                    <Link to='/matric'>Marks Detail- Matriculation</Link> <br/> <br/>
-                    </div>     */}

@@ -21,7 +21,7 @@ constructor(){
  </div>
 
                 <div className='container'>
-                        <div className="card blue-grey lighten-3">
+                        <div className="card blue-grey lighten-5">
                         <div className="card-content black-text">
                         <span className="card-title"><b>Assistant Manager Accounts</b>  </span>
                         <span className="card-title"><b>Niagara Mills (Pvt) Ltd - Head Office Faisalabad.</b>  </span>
@@ -42,7 +42,7 @@ constructor(){
                                 <div className="card blue-grey lighten-4 experience"> Preparation of Monthly store Consumption Report</div>
                                 <div className="card blue-grey lighten-4 experience"> Preparation of Monthly Depreciation schedule and feed in system.</div>
                                 <div className="card blue-grey lighten-4 experience">Make sure the auditing and filling of all Vouchers.</div>
-                                
+                                <div className="card blue-grey lighten-4 experience"> Assist in Submission of Monthly Sales Tax Return of the company</div>
                                
                         </p>
                         </div>

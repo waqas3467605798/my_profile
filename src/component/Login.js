@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 import '../App.css'
 import firebase from '../config/Firebase'
 import {db} from '../config/Firebase'
-import {MyLoginConsumer} from '../context/LoginContext'
-import {MyLoginProvider} from '../context/LoginContext'
+// import {MyLoginConsumer} from '../context/LoginContext'
+// import {MyLoginProvider} from '../context/LoginContext'
 
 
 
@@ -76,7 +76,7 @@ class LoginRegisterForms extends Component{
     render(){
         return(
             <div>
-            <p>If you have already Registered, Plz Login. If you not Registered already, plz Click on Register first.</p>
+            <p className='grey lighten-2 center red-text'><b>If you have already Registered, Plz Login. If you not Registered already, plz Click on Register first.</b></p>
         <button className="waves-effect btn-large" onClick={this.displayLoginForm}>Login </button> <span style={{color:'white'}}>...</span>
         <button className="waves-effect btn-large" onClick={this.displayRegisterForm}>Registeration</button>
     
@@ -146,7 +146,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
 
 } )
 .catch( (err)=>{
-    alert('error' + 'this email is already registered, please click on login')
+    alert('error: this email is already registered, please click on login')
 } )
 
 
@@ -180,7 +180,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
               </div>
 
               <div className="input-field">
-             <input placeholder="Set Password" id="password2" type="password" className="validate" />
+             <input placeholder="Create Password" id="password2" type="password" className="validate" />
              {/* <label forhtml="first_name">First Name</label> */}
               </div>
 
@@ -223,7 +223,7 @@ class Loginform extends Component{
 
 
             if(doc.data().useremail === email){
-                console.log(doc.data().userame)
+                console.log(doc.data())
                 const current_user = doc.data().userame;
                 localStorage.setItem("currentUser",current_user);
             }
@@ -237,12 +237,14 @@ class Loginform extends Component{
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
 
-
-
+        // console.log(u.user.uid)
+        console.log(u)
+        
     } )
     .catch( (err)=>{
         console.log('error')
     } )
+
    } 
 
 
@@ -281,7 +283,8 @@ class DisplayLoginPage extends Component{
     constructor(props){
         super(props)
         this.state = {
-        current_us: localStorage.getItem("currentUser")
+        current_us: localStorage.getItem("currentUser"),
+        feedback: ''
         }
       }
 
@@ -292,15 +295,66 @@ firebase.auth().signOut();
 }
 
 
+changeHandler =(e)=>{
+this.setState({[e.target.name]: e.target.value})
+}
+
+
+feedback = ()=>{
+    // const feedback = document.querySelector("#feedback").value
+    const feedback = this.state.feedback;
+    const userName = localStorage.getItem("currentUser")
+    console.log(feedback);
+
+
+    db.collection("userFeedback").add({
+        userName: userName,
+        feedback: feedback
+        
+    })
+    .then((docRef) => {
+        console.log("Document written with ID: ", docRef.id);
+        alert('Your feedback submitted successfully')
+        this.setState({feedback:''})
+    })
+    .catch((error) => {
+        console.error("Error adding document: ", error);
+    });     
+
+
+
+}
 
     render(){
         return (
             <div>
-                <h4>Welcome...{this.state.current_us}</h4>
-                
-                              
+                <h4 className='blue-text container'>Welcome...{this.state.current_us}</h4>
+                <br/><h5 className='red-text container'>Are you like my Profile and want to make your own Profile like this... Please Contact </h5>
 
+
+                  <div className='container'>
+                        <div className="card blue-grey lighten-5">
+                        <div className="card-content black-text">
+                        <span className="card-title"><b>Contact Details</b>  </span>
+                        <p> +923467605798 <br/>+923167558180 <br/> waqas.mba86@gmail.com <br/> waqas_mba86@yahoo.com</p>
+                        </div>
+                    </div>
+                    </div>
+            
+                    <div style={{border:'1px solid grey'}} className='container'>
+                    <h5 className='red-text container'>Write Your Feedback Here </h5>
+                    <div className='container'>
+                        
+                        <input value={this.state.feedback} name='feedback' onChange={this.changeHandler} type='text' id='feedback' />
+                        <button className="waves-effect btn-large" onClick={this.feedback}>Submit</button>
+                        </div>
+                    </div>
+<br/><br/>
+
+              <div className='container center'>
                 <button className="waves-effect btn-large red" onClick={this.logout}>Logout</button>
+                </div>
+            <br/><br/>
             </div>
         )
     }
