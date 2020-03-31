@@ -12,6 +12,7 @@ constructor(props){
     super(props)
     this.state = {
         user: null,
+        userName:''
     }
 }
 
@@ -25,7 +26,26 @@ this.authListener();
 authListener = ()=>{
 firebase.auth().onAuthStateChanged( (user)=>{
     if(user){
-        this.setState({user, isLogin:true})
+        this.setState({user})
+        console.log(user.email)
+
+
+        // this is only to get user Name & sent this name through props to the LoginDisplay page
+        db.collection("users").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+    
+                if(doc.data().useremail === user.email){
+                    // console.log(doc.data())
+                    const current_user = doc.data().userame;
+                    this.setState({userName:current_user})
+                }
+                
+            });
+        });
+
+
+
+
     } else {
         this.setState({user:null})
     }
@@ -35,8 +55,8 @@ firebase.auth().onAuthStateChanged( (user)=>{
     render() {        
         return (
 <div className='container'>
-    {this.state.user ? (<DisplayLoginPage/>) : <LoginRegisterForms/>}
-
+    {this.state.user ? (<DisplayLoginPage current_user={this.state.userName}/>) : <LoginRegisterForms/>}
+           
             
 </div>
 
@@ -76,6 +96,7 @@ class LoginRegisterForms extends Component{
     render(){
         return(
             <div>
+                 <h5 className="center-align blue-text grey lighten-4">Want to Make Your Own Profile....? Plz Register</h5>
             <p className='grey lighten-2 center red-text'><b>If you have already Registered, Plz Login. If you not Registered already, plz Click on Register first.</b></p>
         <button className="waves-effect btn-large" onClick={this.displayLoginForm}>Login </button> <span style={{color:'white'}}>...</span>
         <button className="waves-effect btn-large" onClick={this.displayRegisterForm}>Registeration</button>
@@ -120,15 +141,12 @@ const conpassword = document.querySelector('#conpassword').value;
 
 if(password === conpassword){
 
-    localStorage.setItem("currentUser",name);
+    // localStorage.setItem("currentUser",name);
 
  
 firebase.auth().createUserWithEmailAndPassword(email, password)
 .then( (u)=>{
-    console.log(u);
-    
-
-
+    // console.log(u);
 
     db.collection("users").add({
         userame: name,
@@ -141,6 +159,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
     })
     .catch((error) => {
         console.error("Error adding document: ", error);
+        
     });     
 
 
@@ -217,31 +236,16 @@ class Loginform extends Component{
     
 
 
- 
-    db.collection("users").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-
-
-            if(doc.data().useremail === email){
-                console.log(doc.data())
-                const current_user = doc.data().userame;
-                localStorage.setItem("currentUser",current_user);
-            }
-            
-        });
-    });
-
-
-
 
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then( (u)=>{
 
         // console.log(u.user.uid)
-        console.log(u)
+        // console.log(u)
         
     } )
     .catch( (err)=>{
+        alert('Your Password is incorrect or you are not registered.')
         console.log('error')
     } )
 
@@ -283,7 +287,7 @@ class DisplayLoginPage extends Component{
     constructor(props){
         super(props)
         this.state = {
-        current_us: localStorage.getItem("currentUser"),
+        // current_us: localStorage.getItem("currentUser"),
         feedback: ''
         }
       }
@@ -303,8 +307,9 @@ this.setState({[e.target.name]: e.target.value})
 feedback = ()=>{
     // const feedback = document.querySelector("#feedback").value
     const feedback = this.state.feedback;
-    const userName = localStorage.getItem("currentUser")
-    console.log(feedback);
+    const userName = this.props.current_user
+    // const userName = localStorage.getItem("currentUser")
+    // console.log(feedback);
 
 
     db.collection("userFeedback").add({
@@ -328,7 +333,8 @@ feedback = ()=>{
     render(){
         return (
             <div>
-                <h4 className='blue-text container'>Welcome...{this.state.current_us}</h4>
+                <br/>
+                <h4 className='container'>Welcome...<span className='blue-text'>{this.props.current_user} </span></h4>
                 <br/><h5 className='red-text container'>Are you like my Profile and want to make your own Profile like this... Please Contact </h5>
 
 
